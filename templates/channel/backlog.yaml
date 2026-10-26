@@ -1,0 +1,32 @@
+videos: []
+# Example entry:
+# - id: "001"
+#   title: ""
+#   topic: ""
+#   target_length_min: 0
+#   status: idea            # idea | scripted | produced | scheduled | published | retired
+#   script: scripts/001.md
+#   ai_disclosure: not_required   # not_required | required | undecided
+#   licenses:
+#     voice: ""
+#     music: ""
+#     visuals: ""
+#   compliance:
+#     original_script: false
+#     no_health_claims: false
+#     voice_licensed: false
+#     voice_disclosure_decided: false
+#     music_licensed: false
+#     visuals_licensed: false
+#     not_made_for_kids: false
+#     audio_levels_checked: false
+#     metadata_honest: false
+#     variation_check: false
+#   publish:
+#     date: ""
+#     url: ""
+#   results:
+#     views_7d: null
+#     avg_view_duration_pct: null
+#     ctr_pct: null
+#     rpm: null

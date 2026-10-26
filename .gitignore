@@ -1,0 +1,21 @@
+# secrets and credentials
+.env
+.env.*
+secrets/
+client_secret*.json
+token*.json
+*.pem
+
+# generated media (keep repo small; store elsewhere)
+channels/*/assets/large/
+channels/*/output/
+*.mp4
+*.mov
+*.wav
+*.mp3
+*.flac
+
+# python
+__pycache__/
+*.pyc
+.venv/

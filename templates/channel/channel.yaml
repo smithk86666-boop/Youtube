@@ -1,0 +1,29 @@
+slug: "{{slug}}"
+name: "{{name}}"
+status: planning            # planning | launching | active | paused | retired
+niche: ""
+sub_niche: ""
+audience: ""
+language: en
+format:
+  type: long_form           # long_form | shorts | mixed
+  target_length_min: 0
+  cadence_per_week: 0
+voice:
+  provider: ""              # must be a plan with commercial rights
+  plan: ""
+  voice_id: ""
+  clearly_synthetic: true   # false => AI disclosure toggle likely required
+music:
+  source: ""
+  license_ref: ""
+monetization:
+  ypp_status: not_started   # not_started | tier1 | tier2
+  affiliate: []
+  sponsors: []
+accounts:
+  google_account_note: ""   # describe only; never store credentials here
+  api_audited: false
+kpis:
+  target_avg_view_duration_pct: 0
+  target_ctr_pct: 0
