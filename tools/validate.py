@@ -49,7 +49,7 @@ def check_backlog(path, errors):
             if video.get("ai_disclosure") not in DISCLOSURE - {"undecided"}:
                 errors.append(f"{where}: ai_disclosure undecided")
             comp = video.get("compliance") or {}
-            failed = [k for k in COMPLIANCE_KEYS if comp.get(k) is not True]
+            failed = [k for k in COMPLIANCE_KEYS if comp.get(k) is not True and comp.get(k) != "n/a"]
             if failed:
                 errors.append(f"{where}: compliance not passed: {', '.join(failed)}")
 

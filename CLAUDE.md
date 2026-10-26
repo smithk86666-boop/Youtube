@@ -8,7 +8,8 @@ Workspace for building and running faceless YouTube channels. Goal: maximize wat
 CLAUDE.md                 this file (root rules; channel folders add their own)
 docs/
   research/               dated research notes, each with sources and confidence
-  compliance-checklist.md pre-publish gate every video must pass
+  experiments/            cross-channel tests with arms, metrics, and decision rules
+  compliance-checklist.md pre-publish gate every video must pass (use "n/a" for items that don't apply)
   automation-roadmap.md   staged plan from manual to automated
 templates/
   channel/                scaffold copied by tools/new_channel.py

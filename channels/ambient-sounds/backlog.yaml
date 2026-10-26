@@ -1,0 +1,13 @@
+videos:
+  - {id: "001", title: "8 Hours of Heavy Rain on a Tin Roof", topic: "rain on corrugated metal, recorded under a shed roof", target_length_min: 480, status: idea}
+  - {id: "002", title: "8 Hours of Gentle Rain on a Window at Night", topic: "light rain on glass, indoor perspective", target_length_min: 480, status: idea}
+  - {id: "003", title: "8 Hours of Ocean Waves on a Pebble Beach", topic: "shingle beach surf, slow rhythm", target_length_min: 480, status: idea}
+  - {id: "004", title: "8 Hours of Wind Through Pine Trees", topic: "steady wind in conifers", target_length_min: 480, status: idea}
+  - {id: "005", title: "8 Hours of a Distant Thunderstorm Over Fields", topic: "low rolling thunder with light rain, no sharp cracks", target_length_min: 480, status: idea}
+  - {id: "006", title: "8 Hours of a Mountain Stream", topic: "small stream over rocks", target_length_min: 480, status: idea}
+  - {id: "007", title: "8 Hours of Rain on a Tent in the Forest", topic: "rain on fabric with leaf drip", target_length_min: 480, status: idea}
+  - {id: "008", title: "8 Hours of Soft Waves in a Quiet Harbor", topic: "lapping water against boats and posts", target_length_min: 480, status: idea}
+  - {id: "009", title: "8 Hours of Snowfall Silence and Distant Wind", topic: "winter quiet with faint wind", target_length_min: 480, status: idea}
+  - {id: "010", title: "8 Hours of Rain on Leaves in a Garden", topic: "rain on broad leaves", target_length_min: 480, status: idea}
+  - {id: "011", title: "8 Hours of a Desert Night Breeze", topic: "wind over dunes with faint insects", target_length_min: 480, status: idea}
+  - {id: "012", title: "8 Hours of Rain Under a Bridge", topic: "rain with echo and drip", target_length_min: 480, status: idea}
