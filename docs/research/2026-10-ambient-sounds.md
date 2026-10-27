@@ -11,6 +11,12 @@ All sources are SEO vendor blogs, channel-stat aggregators, and sound-pack store
 - **Small-channel earnings:** one aggregator page shows about 275 subscribers, 615K views, and estimated $0-3 per day. One data point, not a benchmark. (low)
 - **Licensing:** commercial sound libraries (for example TunePocket) sell rain and ocean loops for commercial use; their free previews are explicitly unlicensed. Freesound license terms (CC0 versus attribution) were not verified and must be checked per clip. (medium for library claim, unverified for Freesound)
 
+## Addendum 2026-10-27: do original-footage loop channels earn?
+
+- No creator income disclosures or YouTube data were found. Estimates come from analytics and channel-sale sites: one ambient channel est. $125-408/month; a for-sale rain-plus-narrated-stories channel claimed ~$1,700/month on ~75K monthly views (seller's figure); a rain channel with ~771K lifetime views est. $0-2/day. A claim that a fireplace video earned seven figures is unverified. (low confidence)
+- YouTube's policy: shooting your own footage is not what gets flagged; a single loop with minimal variation, or many near-identical uploads, is the repetitive/inauthentic risk, assessed across the whole channel. Same intro/outro is fine if the core content differs. No source addressed looped ambient video specifically; that part is inference. (medium)
+- Takeaway: it can earn, usually modestly, and the evidence for high income is promotional. Real recordings with distinct places and visuals lower the policy risk but do not change the low typical earnings.
+
 ## Implications
 
 - Cheap to make, but the cheapest version (one loop, many titles) is the version most likely to be rejected.

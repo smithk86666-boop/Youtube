@@ -22,6 +22,10 @@ Ask Claude to run the `produce-video` skill, or follow it by hand. You listen to
 - [ ] Listen to the bed under the voice; it should be barely noticeable. Adjust `--bed-db` if not.
 - [ ] Skim `channels/sleep/factchecks/001.md` and the items it marks hedged.
 
+## 3b. Preview before anything is public
+- [ ] Rough cut locally: the pipeline can render the real script with a free local voice for timing and feel only. It is not the voice you would publish, and its commercial-use terms were not checked. The first preview (6.9 min of 001) was made this way.
+- [ ] Final check in Studio: upload with visibility Private (only you can watch), review the processed video and sound on your phone and a speaker, check the Content ID and copyright status, then switch to Scheduled or Public. Uploads can stay Private for as long as you like.
+
 ## 4. Upload in Studio
 - [ ] Upload `video.mp4`, the thumbnail, and the text from `output/sleep/<id>/metadata.md`.
 - [ ] Confirm not made for kids, set the AI toggle as decided, choose the playlist, set the mid-roll option for the test, and schedule.
