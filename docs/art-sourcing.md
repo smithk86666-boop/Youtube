@@ -26,6 +26,9 @@ licenses:
 
 A painting found online (for example via a screenshot or image search) is almost certainly someone's copyrighted work. Do not use it in a monetized video without the artist's written permission or a license. The first test used such an image for a private preview only.
 
+## Public-domain paintings, animated
+`tools/animate_water_art.py` animates only the water of a painting, using a hand-drawn mask (white = may move): flowing paint, travelling swell heave, foam churn, and foam pulses, as a seamless loop. First use: Courbet, *La mer orageuse* (1869), public domain; provenance in `channels/sleep/assets/art/PROVENANCE.md`. Other public-domain marine painters to look for: Aivazovsky, Winslow Homer, Turner, Hokusai. For each, open the Commons file page, confirm the license box, and record the date.
+
 ## Original generated scenes
 `tools/procedural_waves.py` draws an original breaking-surf scene from code (sky, headlands, sea, foam, sand): crests swell, steepen, break into whitewater, throw spray, and wash up the beach, in a 30 s seamless loop. No source artwork is used, so the output is our own work. Record `licenses.visuals: "own work: tools/procedural_waves.py, seed N, palette P"`. Change `--seed` and `--palette` per video so scenes differ.
 
