@@ -21,5 +21,10 @@ licenses:
   visuals: "Source: <institution>; <file page URL>; license: <as shown>; checked 2026-MM-DD"
 ```
 
+## Animating art
+`tools/animate_painting.py` turns a still painting or photo of water into a seamless 1080p looping clip (rolling wave displacement, haze shimmer, foam glints, slow push-in). It animates the art as given, so the rights to the still apply to the clip. The loop is 30 s; the narration or ambient audio carries the video. Pass the clip to `render_video.py --video`. Rendering a 30 s loop takes about 80 s on 4 cores; a long video re-encodes at 24 fps, so allow more time than for a still.
+
+A painting found online (for example via a screenshot or image search) is almost certainly someone's copyrighted work. Do not use it in a monetized video without the artist's written permission or a license. The first test used such an image for a private preview only.
+
 ## Status
 Automated downloading was attempted and blocked by a rate limit on the shared network connection, so images are fetched by hand or in a later session. Until then the pilot uses the generated night sky.

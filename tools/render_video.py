@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Mix narration with a bed under it and render an MP4 with a still image.
 
-usage: render_video.py --narration narration.wav --bed bed.m4a --image art.jpg --out video.mp4
+usage: render_video.py --narration narration.wav --bed bed.m4a (--image art.jpg | --video loop.mp4) --out video.mp4
          [--bed-db -22] [--lufs -24] [--fade-in 4] [--fade-out 30] [--tail 30]
 
 The bed sits well below the voice, the narration is leveled, the mix ends with a long
@@ -22,15 +22,18 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--narration", required=True)
     ap.add_argument("--bed", required=True)
-    ap.add_argument("--image", required=True)
+    ap.add_argument("--image", help="still image background")
+    ap.add_argument("--video", help="seamless looping background clip (see animate_painting.py)")
     ap.add_argument("--out", required=True)
     ap.add_argument("--bed-db", type=float, default=-22.0, help="bed level relative to leveled narration")
     ap.add_argument("--lufs", type=float, default=-24.0)
     ap.add_argument("--fade-in", type=float, default=4.0)
     ap.add_argument("--fade-out", type=float, default=30.0)
     ap.add_argument("--tail", type=float, default=30.0, help="seconds of bed-only audio after the voice")
-    ap.add_argument("--fps", type=int, default=5)
+    ap.add_argument("--fps", type=int, default=5, help="frame rate for still images")
     a = ap.parse_args()
+    if bool(a.image) == bool(a.video):
+        sys.exit("give exactly one of --image or --video")
 
     nd, bd = duration(a.narration), duration(a.bed)
     total = nd + a.tail
@@ -46,11 +49,13 @@ def main():
     )
     cmd = ["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-stats",
            "-i", a.narration, "-i", a.bed,
-           "-loop", "1", "-framerate", str(a.fps), "-i", a.image,
+           *(["-loop", "1", "-framerate", str(a.fps), "-i", a.image] if a.image
+             else ["-stream_loop", "-1", "-i", a.video]),
            "-filter_complex", graph,
            "-map", "2:v", "-map", "[a]",
            "-vf", "scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:black,format=yuv420p",
-           "-c:v", "libx264", "-tune", "stillimage", "-preset", "veryfast", "-crf", "30", "-r", str(a.fps),
+           "-c:v", "libx264", *(["-tune", "stillimage", "-crf", "30"] if a.image else ["-crf", "26"]),
+           "-preset", "veryfast", "-r", str(a.fps if a.image else 24),
            "-c:a", "aac", "-b:a", "160k", "-ar", "44100", "-t", f"{total:.2f}", "-movflags", "+faststart", a.out]
     if subprocess.run(cmd).returncode:
         sys.exit("ffmpeg failed")
