@@ -7,6 +7,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 CHANNEL_STATUS = {"planning", "launching", "active", "paused", "retired"}
+SERIES_STATUS_ROLES = {"core", "probe"}
 VIDEO_STATUS = {"idea", "scripted", "produced", "scheduled", "published", "retired"}
 DISCLOSURE = {"not_required", "required", "undecided"}
 GATED = {"scheduled", "published"}
@@ -26,9 +27,13 @@ def check_channel(path, errors):
     for key in ("name", "niche", "format", "voice", "monetization"):
         if key not in data:
             errors.append(f"{path.name}: channel.yaml missing {key}")
+    for s in data.get("series") or []:
+        if s.get("role") not in SERIES_STATUS_ROLES:
+            errors.append(f"{path.name}: series {s.get('id')!r} needs role core|probe")
+    return {s["id"] for s in data.get("series") or []}
 
 
-def check_backlog(path, errors):
+def check_backlog(path, errors, series_ids=frozenset()):
     data = yaml.safe_load((path / "backlog.yaml").read_text()) or {}
     seen = set()
     for video in data.get("videos") or []:
@@ -42,12 +47,18 @@ def check_backlog(path, errors):
             errors.append(f"{where}: invalid status {status!r}")
         if not video.get("title"):
             errors.append(f"{where}: missing title")
+        if series_ids and video.get("series") not in series_ids:
+            errors.append(f"{where}: unknown series {video.get('series')!r}")
         if status in {"scripted", "produced", "scheduled", "published"}:
             if not (path / video.get("script", f"scripts/{vid}.md")).exists():
                 errors.append(f"{where}: script file missing")
         if status in GATED:
             if video.get("ai_disclosure") not in DISCLOSURE - {"undecided"}:
                 errors.append(f"{where}: ai_disclosure undecided")
+            if video.get("fact_check") != "done":
+                errors.append(f"{where}: fact_check not done")
+            if not video.get("sources"):
+                errors.append(f"{where}: no sources listed")
             comp = video.get("compliance") or {}
             failed = [k for k in COMPLIANCE_KEYS if comp.get(k) is not True and comp.get(k) != "n/a"]
             if failed:
@@ -58,11 +69,15 @@ def main():
     errors = []
     channels = sorted(p for p in (ROOT / "channels").iterdir() if p.is_dir())
     for path in channels:
-        for name, fn in (("channel.yaml", check_channel), ("backlog.yaml", check_backlog)):
-            if not (path / name).exists():
-                errors.append(f"{path.name}: missing {name}")
-            else:
-                fn(path, errors)
+        series_ids = frozenset()
+        if not (path / "channel.yaml").exists():
+            errors.append(f"{path.name}: missing channel.yaml")
+        else:
+            series_ids = check_channel(path, errors) or frozenset()
+        if not (path / "backlog.yaml").exists():
+            errors.append(f"{path.name}: missing backlog.yaml")
+        else:
+            check_backlog(path, errors, series_ids)
     for e in errors:
         print("ERROR", e)
     print(f"{len(channels)} channel(s) checked, {len(errors)} error(s)")
