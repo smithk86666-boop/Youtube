@@ -60,6 +60,7 @@ python3 tools/lint_script.py channels/sleep/scripts/001.md --target-min 60
 python3 tools/tts.py plan|run|check|join sleep 001          # narration (run needs ELEVENLABS_API_KEY)
 python3 tools/make_bed.py --kind rain|wind|waves --minutes 62 --seed 1 --out bed.m4a
 python3 tools/make_thumbnail.py --text "..." --out thumb.jpg --still still.jpg [--art image.jpg]
+python3 tools/procedural_waves.py --out waves_loop.mp4 --seconds 30 --seed 1 --palette dusk|day   # original animated surf (own work), ~8 min to render
 python3 tools/animate_painting.py --image art.png --out bg_loop.mp4 --seconds 30 --horizon 0.32 --crop-y 100   # still art -> seamless looping background
 python3 tools/render_video.py --narration n.wav --bed bed.m4a (--image still.jpg | --video bg_loop.mp4) --out video.mp4
 python3 tools/package.py sleep 001 --duration-sec 3550      # title, description, chapters, sources

@@ -26,5 +26,10 @@ licenses:
 
 A painting found online (for example via a screenshot or image search) is almost certainly someone's copyrighted work. Do not use it in a monetized video without the artist's written permission or a license. The first test used such an image for a private preview only.
 
+## Original generated scenes
+`tools/procedural_waves.py` draws an original breaking-surf scene from code (sky, headlands, sea, foam, sand): crests swell, steepen, break into whitewater, throw spray, and wash up the beach, in a 30 s seamless loop. No source artwork is used, so the output is our own work. Record `licenses.visuals: "own work: tools/procedural_waves.py, seed N, palette P"`. Change `--seed` and `--palette` per video so scenes differ.
+
+Restyling or filtering someone else's artwork does not remove their copyright; the result is still a derivative of the original. The way to avoid the problem is to not use their pixels at all: draw something new, or use art you own or have a license for. Subjects (waves, headlands, dusk light) are not protected, only a particular artist's expression of them.
+
 ## Status
 Automated downloading was attempted and blocked by a rate limit on the shared network connection, so images are fetched by hand or in a later session. Until then the pilot uses the generated night sky.
