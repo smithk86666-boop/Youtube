@@ -1,0 +1,7 @@
+# Pronunciation lexicon: word<TAB>respelling used in the narration script
+# Add every name or term the voice mispronounces. The TTS tool applies these before synthesis.
+rushlight	rush-light
+tallow	tal-low
+pottage	pot-ij
+wattle	wot-ul
+reeve	reev

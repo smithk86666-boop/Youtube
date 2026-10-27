@@ -1,0 +1,37 @@
+videos:
+  - id: "001"
+    series: quiet-history
+    title: "A Winter Night in a Medieval English Village | Calm History for Sleep"
+    topic: "evening routines, houses, light, food, sleep habits, and night sounds in a 14th century English village"
+    target_length_min: 60
+    status: scripted
+    script: scripts/001.md
+    sources:
+      - "Roger Ekirch, At Day's Close: Night in Times Past (2005)"
+      - "Christopher Dyer, Making a Living in the Middle Ages (2002)"
+      - "Christopher Dyer, Standards of Living in the Later Middle Ages (1989)"
+      - "Barbara Hanawalt, The Ties That Bound: Peasant Families in Medieval England (1986)"
+      - "Frances and Joseph Gies, Life in a Medieval Village (1990)"
+      - "Ian Mortimer, The Time Traveller's Guide to Medieval England (2008)"
+    fact_check: done        # pending | done; done = every claim classified in factchecks/<id>.md (AI search pass; human spot-check recommended)
+    ai_disclosure: undecided
+    licenses: {voice: "", music: "own work, generated with tools/make_bed.py", visuals: ""}
+  - {id: "002", series: quiet-history, title: "Travelling a Roman Road at Night | Calm History for Sleep", topic: "road surfaces, mansiones and inns, milestones, night travel limits", target_length_min: 90, status: idea}
+  - {id: "003", series: quiet-history, title: "Midwinter in a Viking Age Longhouse | Calm History for Sleep", topic: "longhouse layout, fire, food stores, crafts, storytelling evenings", target_length_min: 90, status: idea}
+  - {id: "004", series: quiet-history, title: "A Farming Year Along the Nile in Ancient Egypt | Calm History for Sleep", topic: "flood, sowing, harvest, village life, night sky", target_length_min: 90, status: idea}
+  - {id: "005", series: quiet-history, title: "Evening in a Tudor Household | Calm History for Sleep", topic: "hearth, candles, supper, servants, beds and bedtime", target_length_min: 90, status: idea}
+  - {id: "006", series: quiet-history, title: "A Night Inside a Medieval Monastery | Calm History for Sleep", topic: "night offices, dormitory, silence, scriptorium, gardens", target_length_min: 90, status: idea}
+  - {id: "007", series: quiet-history, title: "The Lamplighters of Victorian London | Calm History for Sleep", topic: "gas lighting, lamplighters' rounds, fog, night city sounds", target_length_min: 90, status: idea}
+  - {id: "008", series: quiet-history, title: "An Evening in an Edo Period Town | Calm History for Sleep", topic: "merchant houses, bathhouses, lanterns, night watch", target_length_min: 90, status: idea}
+  - {id: "009", series: quiet-history, title: "A Night at a Silk Road Caravanserai | Calm History for Sleep", topic: "courtyards, animals, traders, food, stars", target_length_min: 90, status: idea}
+  - {id: "010", series: quiet-history, title: "A Night Watch Aboard a Sailing Ship | Calm History for Sleep", topic: "watches, rigging sounds, sleeping in hammocks, galley, navigation by stars", target_length_min: 90, status: idea}
+  - {id: "011", series: quiet-history, title: "A Medieval Market Town After Dark | Calm History for Sleep", topic: "curfew bells, watchmen, closing stalls, inns", target_length_min: 90, status: idea}
+  - {id: "012", series: quiet-history, title: "Life on a Canal Narrowboat in the 1800s | Calm History for Sleep", topic: "locks, horses, cargo, family boat life", target_length_min: 90, status: idea}
+  - {id: "013", series: quiet-history, title: "The Lighthouse Keeper's Night | Calm History for Sleep", topic: "lamp tending, logbooks, storms, supply boats", target_length_min: 90, status: idea}
+  - {id: "014", series: quiet-history, title: "The Slow History of Bread | Calm History for Sleep", topic: "grain, milling, ovens, bakers' guilds, daily loaf", target_length_min: 90, status: idea}
+  - {id: "015", series: still-weather, title: "Rain on a Tin Roof, 3 Hours | Real Recording", topic: "own recording; needs provenance proof", target_length_min: 180, status: idea}
+  - {id: "016", series: still-weather, title: "Waves on a Pebble Beach, 3 Hours | Real Recording", topic: "own recording; needs provenance proof", target_length_min: 180, status: idea}
+  - {id: "017", series: still-weather, title: "Wind in Pine Trees, 3 Hours | Real Recording", topic: "own recording; needs provenance proof", target_length_min: 180, status: idea}
+  - {id: "018", series: still-weather, title: "Snowfall and Distant Wind, 3 Hours | Real Recording", topic: "own recording; needs provenance proof", target_length_min: 180, status: idea}
+  - {id: "019", series: gentle-stories, title: "The Lamp at the End of the Lane | A Calm Sleep Story", topic: "original fiction, no tension, a lamplighter's quiet round", target_length_min: 60, status: idea}
+  - {id: "020", series: gentle-stories, title: "The Slow Train to the Coast | A Calm Sleep Story", topic: "original fiction, no tension, an overnight rail journey", target_length_min: 60, status: idea}

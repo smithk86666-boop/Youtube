@@ -19,3 +19,6 @@ channels/*/output/
 __pycache__/
 *.pyc
 .venv/
+
+# pipeline outputs
+output/

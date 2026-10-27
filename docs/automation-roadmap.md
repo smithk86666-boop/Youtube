@@ -1,28 +1,30 @@
 # Automation roadmap
 
-Principle: automate one stage at a time, each runnable on a single backlog entry, with a human review point until the stage has proven reliable. Do not automate upload until the compliance gate is automated and trusted.
+Principle: automate one stage at a time, each runnable on a single backlog entry, with a human review point until the stage has proven reliable. Do not automate upload until the compliance gate is trusted.
 
 | Stage | Description | Status | Notes |
 |---|---|---|---|
-| 0 | Manual end to end for the first 5-10 videos | planned | Learn what works before encoding it. |
-| 1 | Idea and backlog generation | planned | Output: entries in `backlog.yaml`. Dedup against existing titles. |
-| 2 | Script drafting from a brief | planned | Claude drafts to `scripts/<id>.md`; human edits. Must follow channel voice rules. |
-| 3 | Narration synthesis | planned | Paid TTS with commercial license. Record license in backlog entry. |
-| 4 | Video render | planned | Voice + quiet music bed + looping visual via ffmpeg. Loudness normalization. |
-| 5 | Compliance gate | planned | Script-level checks (health-claim phrases, similarity to prior scripts), license fields present. |
-| 6 | Upload | blocked | See API risk below. Manual via Studio until resolved. |
-| 7 | Analytics feedback | planned | Pull retention, RPM, CTR into `channels/<slug>/analytics/`; feed back into topic choice. |
+| 0 | Manual end to end for the first 5-10 videos | next | Learn what works before encoding more |
+| 1 | Idea and backlog generation | skill ready | `niche-sampling` plus `sleep-script-writer`; dedup against existing titles |
+| 2 | Script drafting | skill ready, 1 script written | `sleep-script-writer`; `tools/lint_script.py` blocks near-duplicates and health claims |
+| 3 | Fact-check | skill ready, 1 report done | `fact-check-script`; AI search pass, human spot-check recommended |
+| 4 | Narration synthesis | tool written, **live call untested** | `tools/tts.py` plan/check/join tested; `run` needs a paid key and a first small test |
+| 5 | Bed and video render | tools tested locally | `make_bed.py`, `render_video.py`; checked output near -24 LUFS; not auditioned by ear |
+| 6 | Thumbnail and metadata | tools tested locally | `make_thumbnail.py`, `package.py`; chapter times are estimates until checked against audio |
+| 7 | Compliance gate | skill ready, validator enforces | `tools/validate.py` blocks scheduling until every item is recorded |
+| 8 | Upload | **blocked** | See API risk below. Manual in Studio |
+| 9 | Analytics feedback | planned | Manual paste into `weekly-review` now; API later |
 
-## API risk (blocker for stage 6)
+## API risk (blocker for stage 8)
 
-- Unaudited API projects have uploads forced to private. The audit takes weeks, requires a compliant use case, and is separate from quota.
-- Action: when the first channel has a handful of videos and a working manual process, apply for the API compliance audit. In parallel, keep uploading manually.
-- Alternative: an upload tool that has already passed the audit, at the cost of fees and a third-party dependency.
+- API projects created after July 2020 that have not passed Google's compliance audit have `videos.insert` uploads forced to private, regardless of the requested privacy status. The audit takes weeks and is separate from quota. Quota cost of `videos.insert` is reported inconsistently across sources; check the quota table and your project's quota page.
+- Plan: file the audit request once the manual process is stable (about video 10) and the use case is clear (one owner uploading their own channel). Keep uploading manually meanwhile.
+- Alternative: an upload tool that has already passed the audit.
 
 ## Design constraints for the pipeline
 
-- Idempotent per backlog id: rerunning a stage overwrites that id's outputs only.
-- Never publish automatically in the early phase; the last step stays "schedule", a human confirms.
-- Rate-limit and add variation: bursts of near-identical uploads are the pattern most associated with enforcement.
-- Credentials via environment variables or a gitignored `secrets/` directory.
-- Log every automated decision (model, prompt version, provider plan) into the backlog entry.
+- Idempotent per backlog id; reruns overwrite only that id's outputs.
+- Never publish automatically early on; the last step stays "schedule", a human confirms.
+- Rate-limit and vary output; bursts of near-identical uploads are the pattern most associated with enforcement.
+- Credentials via environment variables, never in git.
+- Log every automated decision (model, prompt version, provider plan) in the backlog entry.

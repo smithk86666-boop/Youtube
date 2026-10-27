@@ -1,14 +1,15 @@
 # Youtube
 
-Workspace for faceless YouTube channels, built to be automated over time. Start with `CLAUDE.md` for the rules and layout.
+Workspace for a faceless sleep channel ("Quiet Hours", working name), built to be automated over time. Start with `CLAUDE.md` for rules, layout, commands, and skills.
 
-- `channels/sleep-stories/`: first channel (working name "Quiet Hours"), narrated sleep content for adults
-- `docs/research/`: dated, sourced research notes (niche choice, launch risks)
-- `docs/automation-roadmap.md`: path from manual to automated
-- `docs/compliance-checklist.md`: pre-publish gate
+- `channels/sleep/`: the channel (strategy, 90-day calendar, 20-video backlog, script 001 with its fact-check report)
+- `docs/research/`: sourced research: niche choice, launch risks, top performers, what the bottom 90% get wrong, ambient sounds
+- `docs/runbook-human-steps.md`: the few things only the owner can do
+- `docs/experiments/`: series and format tests with fixed decision rules
+- `tools/`: lint, narration, bed, thumbnail, render, packaging, validation
+- `.claude/skills/`: the workflow as Claude skills
 
 ```
-pip install pyyaml
-python3 tools/new_channel.py <slug> "<Name>"
+pip install pyyaml pillow
 python3 tools/validate.py
 ```

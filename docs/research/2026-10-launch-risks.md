@@ -64,3 +64,13 @@ Source quality: almost everything below comes from third-party blogs and tool ve
 - Copyright status of images and video loops (use own or properly licensed art).
 - Non-ad revenue: affiliate programs for sleep products, sponsorship minimums.
 - Audience safety: sleep content played for children, and YouTube's "made for kids" setting (default to not made for kids, adult audience, and confirm).
+
+## 11. The chosen sub-niche is crowded and under scrutiny (added 2026-10-27; high impact, medium confidence)
+
+- Calm narrated "boring history" for sleep has proven demand (one leading channel: ~702K subscribers, ~130K average views per video, aggregator data) and a flood of inaccurate AI-made imitators (404 Media, via Slashdot). YouTube said it would act on mass-produced content, but the report could not tell whether it had.
+- YouTube's help page (fetched 2026-10-27) says recurring intros and outros are allowed; templated, minimally varied, or mass-produced content is not; AI is allowed with original creative input; reading others' material is "reused content".
+- **Mitigation:** accuracy and sources as the differentiator, distinct structure per video, own title formula, fact-check reports kept as evidence. Details in `2026-10-top-performers.md` and `2026-10-what-not-to-do.md`.
+
+## 12. Rejection and appeal mechanics (added 2026-10-27; medium confidence)
+
+- Per YouTube's help page: a rejection means human reviewers judged that a significant portion of the channel breaks policy. Appeal within 21 days. First rejection: reapply 30 days after the email; later rejections: 90 days. Fix violating videos before reapplying. Do not delete videos to look cleaner; it removes their watch time.

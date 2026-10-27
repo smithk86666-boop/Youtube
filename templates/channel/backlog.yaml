@@ -1,6 +1,9 @@
 videos: []
 # Example entry:
 # - id: "001"
+#   series: ""
+#   sources: []
+#   fact_check: pending       # pending | done
 #   title: ""
 #   topic: ""
 #   target_length_min: 0
